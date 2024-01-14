@@ -1,5 +1,28 @@
-On day 2 of the 100 Days of Python course, I learnt the following concepts:
+100 Days of Python
 
-- Data types: I learnt how to use and convert different types of data, such as integers, floats, strings, and booleans.
-- BMI calculator: I learnt how to use arithmetic operators, input() function, and print() function to calculate the Body Mass Index (BMI) from weight and height.
-- Your life in weeks: I learnt how to use variables, f-Strings, and comments to create a program that tells me how many days, weeks, and months I have left if I live until 90 years old.
+Welcome to my 100 Days of Python GitHub project! 🚀
+
+#Overview
+
+This repository documents my 100-day journey of learning and mastering Python programming. Each day, I tackle diverse coding challenges, exercises, and projects to enhance my Python skills.
+
+#Table of Contents
+
+- [Day 1 to Day 100](#day-1-to-day-100)
+- [How to Use](#how-to-use)
+- [About Me](#about-me)
+
+#Day 1 to Day 100
+
+Explore individual directories for each day's assignments and projects. Dive into hands-on coding experiences covering a broad spectrum of Python concepts and applications.
+
+
+#How to Use
+
+1. Explore each day's directory for specific assignments.
+2. Read the project's README file for instructions and insights.
+3. Have fun coding and learning Python!
+
+#About Me
+
+I'm passionate about coding and excited to share my Python learning journey with the community. Join me in this bootcamp, and let's code together!

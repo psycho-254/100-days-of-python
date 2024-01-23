@@ -35,7 +35,7 @@
 # Example Output 1
 # ['⬜️', '⬜️', '⬜️']
 # ['⬜️', '⬜️', '⬜️']
-# ['⬜️', 'X', '⬜️']
+# ['⬜️',  'X', '⬜️']
 
 # Example Input 2
 # column 3, row 1 would be entered as:
@@ -51,6 +51,8 @@ row2 = ["⬜️","⬜️","⬜️"]
 row3 = ["⬜️","⬜️","⬜️"]
 map = [row1, row2, row3]
 print(f"{row1}\n{row2}\n{row3}")
-position = input("Where do you want to put the treasure? ")
-coordinates = str(position)
-print(coordinates.split(', '))
+position = str(input("Where do you want to put the treasure? "))
+coordinates = []
+column = int(position[0])
+row = position[1]
+print(coordinates.append(column))

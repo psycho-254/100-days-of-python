@@ -1,28 +1,15 @@
-100 Days of Python
 
-Welcome to my 100 Days of Python GitHub project! 🚀
+#Day 4: Randomisation, Lists, and Nested Lists
 
-#Overview
+### Overview
+On this day, I explored the concepts of randomisation, lists, and nested lists in Python. I learned how to generate random numbers and how to create and manipulate lists and nested lists.
 
-This repository documents my 100-day journey of learning and mastering Python programming. Each day, I tackle diverse coding challenges, exercises, and projects to enhance my Python skills.
+## 1. Randomisation
+Randomisation is a powerful concept in programming. In Python, the `random` module provides functionality for generating random numbers, which can be used to add unpredictability to programs.
 
-#Table of Contents
+## 2. Lists and Nested Lists
+Lists are a type of data structure in Python that can hold multiple items in a single variable. Lists can also contain other lists, which are known as nested lists. They are useful for organizing and storing related sets of information.
 
-- [Day 1 to Day 100](#day-1-to-day-100)
-- [How to Use](#how-to-use)
-- [About Me](#about-me)
+## Final Project - Rock, Paper, Scissors
+For the final project, I created a simple version of the game Rock, Paper, Scissors. This project incorporated the use of randomisation to determine the computer's choice, and lists to store the possible choices (rock, paper, scissors).
 
-#Day 1 to Day 100
-
-Explore individual directories for each day's assignments and projects. Dive into hands-on coding experiences covering a broad spectrum of Python concepts and applications.
-
-
-#How to Use
-
-1. Explore each day's directory for specific assignments.
-2. Read the project's README file for instructions and insights.
-3. Have fun coding and learning Python!
-
-#About Me
-
-I'm passionate about coding and excited to share my Python learning journey with the community. Join me in this bootcamp, and let's code together!

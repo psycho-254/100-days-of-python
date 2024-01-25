@@ -1,4 +1,5 @@
-# Day 4: Randomisation, Lists, and Nested Lists
+
+#Day 4: Randomisation, Lists, and Nested Lists
 
 ### Overview
 On this day, I explored the concepts of randomisation, lists, and nested lists in Python. I learned how to generate random numbers and how to create and manipulate lists and nested lists.
@@ -11,3 +12,4 @@ Lists are a type of data structure in Python that can hold multiple items in a s
 
 ## Final Project - Rock, Paper, Scissors
 For the final project, I created a simple version of the game Rock, Paper, Scissors. This project incorporated the use of randomisation to determine the computer's choice, and lists to store the possible choices (rock, paper, scissors).
+

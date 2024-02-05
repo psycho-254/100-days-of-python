@@ -25,7 +25,7 @@ def turn_right():
 #     elif wall_in_front():
 #         turn_left()
     
-
+## debugged code
 while front_is_clear():
     move()
 turn_left()

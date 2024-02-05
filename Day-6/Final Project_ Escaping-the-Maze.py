@@ -15,6 +15,21 @@ def turn_right():
     turn_left()
 
 
+## infinite loop bug
+# while not at_goal():
+#     if right_is_clear():
+#         turn_right()
+#         move()
+#     elif front_is_clear():
+#         move()
+#     elif wall_in_front():
+#         turn_left()
+    
+
+while front_is_clear():
+    move()
+turn_left()
+
 while not at_goal():
     if right_is_clear():
         turn_right()
@@ -23,4 +38,3 @@ while not at_goal():
         move()
     elif wall_in_front():
         turn_left()
-    

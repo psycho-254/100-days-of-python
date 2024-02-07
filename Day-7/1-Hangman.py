@@ -38,3 +38,30 @@ for n in range(0, len(chosen_word)):
     if guess == chosen_word[n]:
         display[n] = chosen_word[n]
 print(display)
+
+
+#Step 3
+
+#TODO-1: - Use a while loop to let the user guess again. 
+# The loop should only stop once the user has guessed all the letters in the chosen_word and 'display' has no more blanks ("_"). 
+# Then you can tell the user they've won.
+
+# while len('_') in display:
+#     for n in range(0, len(chosen_word)):
+#         display += '_'
+#         if guess == chosen_word[n]:
+#             display[n] = chosen_word[n]
+#             display -= '_'
+#     print(display)
+
+while "_" in display:
+    guess = input("Guess another letter: ").lower()
+    for n in range(0, len(chosen_word)):
+        if guess == chosen_word[n]:
+            display[n] = chosen_word[n]
+        else:
+            display[n] -= 1
+    print(display)
+
+    if '_' not in display:
+        print("you won")

@@ -54,13 +54,37 @@ print(display)
 #             display -= '_'
 #     print(display)
 
+# while "_" in display:
+#     guess = input("Guess another letter: ").lower()
+#     for n in range(0, len(chosen_word)):
+#         if guess == chosen_word[n]:
+#             display[n] = chosen_word[n]
+#     print(display)
+
+#     if '_' not in display:
+#         print("you won")
+
+#step 4
+
+#TODO-1: - Create a variable called 'lives' to keep track of the number of lives left. 
+#Set 'lives' to equal 6.
+
+#TODO-2: - If guess is not a letter in the chosen_word,
+    #Then reduce 'lives' by 1. 
+    #If lives goes down to 0 then the game should stop and it should print "You lose."
+
+#TODO-3: - print the ASCII art from 'stages' that corresponds to the current number of 'lives' the user has remaining.
+
+lives = 6
 while "_" in display:
     guess = input("Guess another letter: ").lower()
     for n in range(0, len(chosen_word)):
-        if guess == chosen_word[n]:
+        if lives == 0:
+            print("you lose")
+        if guess != chosen_word[n]:
+            lives -= 1
+        elif guess == chosen_word[n]:
             display[n] = chosen_word[n]
-        else:
-            display[n] -= 1
     print(display)
 
     if '_' not in display:

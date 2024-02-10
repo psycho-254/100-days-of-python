@@ -5,7 +5,6 @@
 #TODO-3 - Check if the letter the user guessed (guess) is one of the letters in the chosen_word.
 
 
-
 #Step 2
 
 #TODO-1: - Create an empty List called display.
@@ -25,24 +24,6 @@
 # The loop should only stop once the user has guessed all the letters in the chosen_word and 'display' has no more blanks ("_"). 
 # Then you can tell the user they've won.
 
-word_list = ["aardvark", "baboon", "camel"]
-import random
-chosen_word = random.choice(word_list)
-print(chosen_word)
-guess = input("Guess a letter: ").lower()
-lives = 6
-display=[]
-
-# while '_' in display:
-for n in range(len(chosen_word)):
-    display += '_'
-    if guess == chosen_word[n]:
-        display[n] = guess
-print(display)
-    # if '_' not in display:
-        # print('you won')    
-
-
 
 #step 4
 
@@ -54,6 +35,108 @@ print(display)
     #If lives goes down to 0 then the game should stop and it should print "You lose."
 
 #TODO-3: - print the ASCII art from 'stages' that corresponds to the current number of 'lives' the user has remaining.
+
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
+word_list = ["aardvark", "baboon", "camel"]
+import random
+chosen_word = random.choice(word_list)
+print(chosen_word)
+guess = input("Guess a letter: ").lower()
+lives = 6
+display=[]
+
+for n in range(len(chosen_word)):
+        display += '_'
+while lives > 0:
+    for n in range(len(chosen_word)):
+        if guess == chosen_word[n]:
+            display[n] = guess
+    print(display)
+    if guess != chosen_word[n]:
+        lives -= 1
+        print(stages[lives])
+    elif '_' not in display:
+        print('you won')
+    elif lives == 0:
+        print('you lost')
+    else:
+        guess = input("Guess another letter: ").lower()   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

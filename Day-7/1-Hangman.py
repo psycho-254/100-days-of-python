@@ -36,66 +36,11 @@
 
 #TODO-3: - print the ASCII art from 'stages' that corresponds to the current number of 'lives' the user has remaining.
 
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-
-word_list = ["aardvark", "baboon", "camel"]
 import random
+from Hangman_art import stages, logo
+from Hangman_words import word_list
 chosen_word = random.choice(word_list)
+print(logo)
 print(chosen_word)
 guess = input("Guess a letter: ").lower()
 lives = 6
@@ -103,18 +48,21 @@ display=[]
 
 for n in range(len(chosen_word)):
         display += '_'
-while lives > 0:
+end_game = False
+while end_game == False:
     for n in range(len(chosen_word)):
         if guess == chosen_word[n]:
             display[n] = guess
     print(display)
-    if guess != chosen_word[n]:
+    if guess not in chosen_word:
         lives -= 1
         print(stages[lives])
-    elif '_' not in display:
-        print('you won')
-    elif lives == 0:
+    if lives == 0:
+        end_game = True
         print('you lost')
+    elif '_' not in display:
+        end_game = True
+        print('you won')
     else:
         guess = input("Guess another letter: ").lower()   
 

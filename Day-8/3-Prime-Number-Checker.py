@@ -14,18 +14,20 @@
 
 # Hint
 # Make sure you name your function/parameters the same as when it's called on the last line of code.
-# Use the same wording as the Example Outputs to make sure the tests pass.
-
 
 n = int(input("Check this number: "))
 def prime_checker(number):
-    for number in range(2,n +1):
-        result = n % number == 0
-
-    if result== 0:   
-        print("It's a prime number.")
-    else: 
-        print("It's not a prime number.")    
-
+    is_prime = True
+    if n == 1:
+        print("It's not a prime number.")
+    else:
+        for i in range(2,number):
+            if number % i == 0:   
+                is_prime = False
+        if is_prime:
+            print("It's a prime number.")
+        else: 
+            print("It's not a prime number.")
 
 prime_checker(number=n)
+

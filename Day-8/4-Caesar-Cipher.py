@@ -1,31 +1,34 @@
 ##step 1 - Encryption
 
-alphabet=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+alphabet=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
-
+# position = alphabet.index(text[0])
+# new_position = position + shift
+# print(new_position)
 #TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
 
 def encrypt():
-    #TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in the alphabet 
+    # TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in the alphabet 
     # by the shift amount and print the encrypted text.  
-    #e.g. 
-    #plain_text = "hello"
-    #shift = 5
-    #cipher_text = "mjqqt"
-    #print output: "The encoded text is mjqqt"
+    # e.g. 
+    # plain_text = "hello"
+    # shift = 5
+    # cipher_text = "mjqqt"
+    # print output: "The encoded text is mjqqt"
 
     cipher_text = ''
     for i in range(len(text)):
         if direction == "encode":
-            position = alphabet.index(text[i])
-            
-            text[i] = alphabet[shift] 
-            cipher_text += text[i] 
+            position = alphabet.index(text[i]) + shift
+            cipher_text += alphabet[position]
     print(f"The encoded text is {cipher_text}")
 encrypt()
+
+
+
     ##HINT: How do you get the index of an item in a list:
     #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
 

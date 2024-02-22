@@ -66,11 +66,13 @@ def encrypt():
         if shift > 26:
             new_shift = shift % 26  
             position = alphabet.index(i) + new_shift
+            character = alphabet[position]
+        elif i not in alphabet:
+            character = i
         else:
             position = alphabet.index(i) + shift
-            if i in text not in alphabet:
-                position = i
-        cipher_text += alphabet[position]
+            character = alphabet[position]
+        cipher_text += character
     print(f"The encoded text is {cipher_text}")
 
 def decrypt():

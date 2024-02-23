@@ -1,11 +1,6 @@
 ##step 1 - Encryption
 from art import logo
 print(logo)
-alphabet=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
 # position = alphabet.index(text[0])
 # new_position = position + shift
 # print(new_position)
@@ -60,34 +55,60 @@ shift = int(input("Type the shift number:\n"))
 #If they type 'yes' then ask them for the direction/text/shift again and call the caesar() function again?
 #Hint: Try creating a while loop that continues to execute the program if the user types 'yes'. 
 
-def encrypt():
-    cipher_text = ''
-    for i in text:      
-        if shift > 26:
-            new_shift = shift % 26  
-            position = alphabet.index(i) + new_shift
-            character = alphabet[position]
-        elif i not in alphabet:
-            character = i
+restart = True
+while restart:
+    alphabet=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+    
+    def encrypt():
+        cipher_text = ''
+        for i in text:      
+            if shift > 26:
+                new_shift = shift % 26  
+                position = alphabet.index(i) + new_shift
+                character = alphabet[position]
+            elif i not in alphabet:
+                character = i
+            else:
+                position = alphabet.index(i) + shift
+                character = alphabet[position]
+            cipher_text += character
+        print(f"The encoded text is {cipher_text}")
+
+    def decrypt():
+        plain_text = ''
+        for i in text:      
+            if shift > 26:
+                new_shift = shift % 26  
+                position = alphabet.index(i) - new_shift
+                character = alphabet[position]
+            elif i not in alphabet:
+                character = i
+            else:
+                position = alphabet.index(i) - shift
+                character = alphabet[position]
+            plain_text += character
+        print(f"The decoded text is {plain_text}")
+
+        
+
+
+
+
+    def ceaser():
+        if direction == 'encode':
+            encrypt()
+        elif direction == 'decode':
+            decrypt()
         else:
-            position = alphabet.index(i) + shift
-            character = alphabet[position]
-        cipher_text += character
-    print(f"The encoded text is {cipher_text}")
+            print('error')
+    ceaser()
 
-def decrypt():
-    plain_text = ''
-    for i in text:        
-        position = alphabet.index(i) - shift
-        plain_text += alphabet[position]
-    print(f"The decoded text is {plain_text}")
+        
 
-
-def ceaser():
-    if direction == 'encode':
-        encrypt()
-    elif direction == 'decode':
-        decrypt()
+    if input('Do you want to restart the cipher program?\n') == 'yes':
+            ceaser()
     else:
-        print('error')
-ceaser()
+            restart = False

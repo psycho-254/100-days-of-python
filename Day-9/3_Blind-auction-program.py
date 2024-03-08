@@ -14,6 +14,7 @@
 # The winner is Elon with a bid of $55000000000
 # Use your knowledge of Python dictionaries and loops to solve this challenge.
 
+import os
 print("Welcome to the secret auction program.")
 bids = []
 end_game = True
@@ -21,15 +22,17 @@ while end_game:
     name = input("What is your name?: ")
     bid = input("What's your bid?: ")
     other_bidders = input("Are there any other bidders? Type 'yes' or 'no'.")
-    if other_bidders == 'yes':
-        end_game = True
-    else:
-        end_game = False
-        print("The winner is  ")
     def add_bid(bidder, amount):
         new_bid = {
             "name": bidder,
             "amount": amount,
         }
         bids.append(new_bid)
+        if other_bidders == 'yes':
+            end_game = True
+            os.system('clear') 
+        else:
+            print("The winner is  ")
+            print(bids)
+            end_game = False
     add_bid(bidder=name, amount=bid)

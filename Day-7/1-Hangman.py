@@ -44,7 +44,7 @@ from Hangman_art import stages, logo
 from Hangman_words import word_list
 chosen_word = random.choice(word_list)
 print(logo)
-print(chosen_word)
+# print(chosen_word)
 guess = input("Guess a letter: ").lower()
 lives = 6
 display=[]
@@ -68,7 +68,7 @@ while end_game == False:
         print(f'sorry {guess} is not in the word. you lose a life')
     if lives == 0:
         end_game = True
-        print('you lost')
+        print(f'Sorry you lost, the correct answer is {chosen_word}')
     elif '_' not in display:
         end_game = True
         word = ''.join(display)
